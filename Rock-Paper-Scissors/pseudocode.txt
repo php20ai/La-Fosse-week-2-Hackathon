@@ -1,0 +1,130 @@
+
+Rock-Paper-Scissors
+
+Get Human Player Name
+HumanName = Human Player Name
+Display "Hi ${HumanName}, 
+          Welcome to Rock 
+          Paper Scissors Game ?"
+
+Display Instruction of game:
+
+Display Are you Ready to Play?
+        Type Y for Yes
+        Type N for No/Quit
+
+If user types N display: Are you sure you want to Quit ? Y/N
+         If user Types Y then Quit Game 
+         If user types N, then display:
+              "Are you Ready to Play?
+               Type Y for Yes
+               Type N for No/Quit"
+
+
+If user types Y, then go ahead with game.
+
+If the input is not Y and is not N, then request user to type either
+Y or N.
+
+Assuming user typed Y:
+
+
+Request user to choose one of the following options: 
+    1.Rock
+    2.Paper
+    3.Scissors
+Store user input as PlayerInput, and put the PlayerInput into lowercase.
+
+Store above options in dictionary i.e.:
+
+objects = {1: "rock", 2: "paper", 3: "scissors"}
+
+Create a collection (array) containing rock, paper and scissors:
+
+stationary = ["rock", "paper", "scissors"]
+
+The computer will use the stationary array to choose either rock, paper or scissors:
+
+create a function that will give a random whole number between and including 0 and 2.
+This function is shown below:
+
+function randInt(min, max) {
+    let mathRand = Math.rand() 
+    while (mathRand===1) {
+        let mathRand = Math.rand() 
+    }
+    let rand = ((mathRand)*(max-min)) + min
+    return Math.floor(rand)
+    
+}
+
+let compRand = randInt(0,3)   // randInt(0,3) will give a whole number between and including 0 and 2.
+
+// The reason why the arguments of randInt are 0 and 3 is shown below:
+// The computer will randomly choose an object from the stationary array (that is created in line 43)
+// However for the computer to get an object from stationary array, the computer needs the index (which is the location of that object
+in array) of that object in stationary array, and for computer to randomly get an object from stationary array we need to give a random index (random number) between and including 
+0 and 2, when computer recieves that random number, the computer will get the object in stationary that has index equal to the random number. .
+//.
+
+Create computerInput that will store either rock, paper or scissors, shown below:
+
+let computerInput = stationary[compRand]
+
+Create count variable that will count number of rounds:
+let count = 0
+Create playerScore and compScore that will store the score of player and computer, respectively.
+let playerScore = 0 
+let compScore = 0
+
+Join playerInput (in line 36) and compInput (in line 72) together:
+
+let result = playerInput + "|" + compInput
+Create while loop and switch statement:
+
+while (count < 10) {
+    switch (result) {
+        case "paper|rock":
+        case "scissors|paper":
+        case "rock|scissors":
+        playerScore +=1
+        count+=1
+        console.log("You have won this round, 
+                      1 point to you!")
+        break
+
+        case "rock|paper":
+        case "paper|scissors":
+        case "scissors|rock":
+        compScore+=1
+        count+=1
+        console.log("Computer has won this round,
+                    Computer gets 1 point ")
+        break
+
+        case "rock|rock":
+        case "paper|paper":
+        case "scissors|scissors":
+        count+=1
+        console.log("It's a tie.")
+        break
+    }
+}
+
+if (playerScore > compScore) {
+    console.log(`You have won your score is ${}`)
+} else if (compScore > playerScore) {
+    console.log(`Computer has won.`)
+} else {
+    console.log(It's a tie.)
+}
+
+
+
+
+
+
+
+
+
+ 

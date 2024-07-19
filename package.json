@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "prompt": "^1.3.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "name": "hackathon-friday-19th-july-2024",
+  "version": "1.0.0",
+  "main": "rockPaperScissors.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
